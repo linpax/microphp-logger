@@ -1,0 +1,20 @@
+{
+  "name": "linpax/microphp-logger",
+  "description": "MicroPHP logger component",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Zcasper",
+      "email": "testuser@mail.linpax.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Micro\\Logger\\": "src/"
+    }
+  },
+  "require": {
+    "psr/log": "^1.0@dev"
+  }
+}
