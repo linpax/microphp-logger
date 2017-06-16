@@ -32,18 +32,23 @@ class Logger extends AbstractLogger
                 continue;
             }
 
-            if (empty($log['levels'])) {
-                continue;
-            }
-
             $this->adapters[$name] = new $log['class']($log);
         }
     }
 
+    /**
+     * Send log
+     *
+     * @param mixed $level
+     * @param string $message
+     * @param array $context
+     */
     public function log($level, $message, array $context = array())
     {
         foreach ($this->adapters as $adapter) {
-            $adapter->log($level, $message, $context);
+            if ($adapter->isSupportedLevel($level)) {
+                $adapter->log($level, $message, $context);
+            }
         }
     }
 }

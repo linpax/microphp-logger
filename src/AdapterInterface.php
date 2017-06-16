@@ -20,4 +20,10 @@ interface AdapterInterface
      * @return void
      */
     public function log($level, $message, array $context = array());
+
+    /**
+     * @param $name
+     * @return boolean
+     */
+    public function isSupportedLevel($name);
 }
